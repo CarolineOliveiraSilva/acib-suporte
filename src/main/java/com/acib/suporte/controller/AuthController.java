@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AuthController {
 
+    // Rota para exibir a página de login (já usada no seu mapeamento raiz)
     @GetMapping("/login")
-    public String exibirLogin() {
-        // Retorna o template login.html localizado em src/main/resources/templates/
-        return "login";
+    public String loginPage() {
+        return "login"; // Retorna o arquivo login.html da pasta templates
     }
 }
