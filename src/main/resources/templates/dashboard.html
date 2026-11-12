@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ACIB Suporte - Painel</title>
+    <!-- Referência ao CSS separado -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="dashboard-layout">
+
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="sidebar-header">ACIB Suporte</div>
+        <ul class="sidebar-menu">
+            <li class="active">Painel Geral</li>
+            <li>Meus Chamados</li>
+            <li>Novo Chamado</li>
+            <li>Base de Conhecimento</li>
+            <li>Configurações</li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="header">
+            <h2>Painel de Controle</h2>
+            <span>Bem-vindo, Associado</span>
+        </div>
+
+        <div class="container">
+            <!-- Cards -->
+            <div class="cards">
+                <div class="card">
+                    <h4>Chamados Ativos</h4>
+                    <span>03</span>
+                </div>
+                <div class="card" style="border-left-color: #ef6c00;">
+                    <h4>Em Andamento</h4>
+                    <span>01</span>
+                </div>
+                <div class="card" style="border-left-color: #2e7d32;">
+                    <h4>Encerrados</h4>
+                    <span>12</span>
+                </div>
+            </div>
+
+            <!-- Tabela -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Últimos Chamados</h3>
+                    <button class="btn">+ Abrir Novo Chamado</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Assunto</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#018</td>
+                            <td>Erro de acesso ao sistema fiscal</td>
+                            <td>Sistema / Software</td>
+                            <td>12/11/2026</td>
+                            <td><span class="badge ativo">Ativo</span></td>
+                        </tr>
+                        <tr>
+                            <td>#017</td>
+                            <td>Dúvida sobre emissão de certificado</td>
+                            <td>Certificação Digital</td>
+                            <td>10/11/2026</td>
+                            <td><span class="badge andamento">Em Andamento</span></td>
+                        </tr>
+                        <tr>
+                            <td>#015</td>
+                            <td>Atualização de cadastro da empresa</td>
+                            <td>Cadastral</td>
+                            <td>05/11/2026</td>
+                            <td><span class="badge encerrado">Encerrado</span></td>
+                        </tr>
+                        <tr>
+                            <td>#012</td>
+                            <td>Suporte à rede de internet comercial</td>
+                            <td>Infraestrutura</td>
+                            <td>01/11/2026</td>
+                            <td><span class="badge encerrado">Encerrado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
