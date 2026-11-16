@@ -6,7 +6,7 @@
 
 ##  Acesso em Produção (Live Demo)
 Pode aceder à aplicação em funcionamento na nuvem (hospedada no Render) através do link abaixo:
-* **[Aceder ao ACIB Suporte (Dashboard)](https://acib-suporte.onrender.com/dashboard)**
+* **[Aceder ao ACIB Suporte (Dashboard)](https://acib-suporte.onrender.com)**
 
 ---
 
