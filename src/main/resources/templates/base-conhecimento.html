@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACIB Suporte - Base de Conhecimento</title>
+    <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+</head>
+
+<body class="dashboard-layout">
+
+    <!-- Menu Lateral Corrigido -->
+    <div class="sidebar">
+        <div class="sidebar-header">ACIB Suporte</div>
+        <ul class="sidebar-menu">
+            <li><a href="/dashboard">Painel Geral</a></li>
+            <li><a href="/meus-chamados">Meus Chamados</a></li>
+            <li><a href="/novo-chamado">Novo Chamado</a></li>
+            <li class="active"><a href="/base-conhecimento">Base de Conhecimento</a></li>
+            <li><a href="/configuracoes">Configurações</a></li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="header">
+            <h2>Base de Conhecimento</h2>
+            <span>Bem-vindo, Associado</span>
+        </div>
+
+        <div class="container">
+            <!-- Artigo / Tutorial Fictício Detalhado -->
+            <div class="table-container" style="padding: 30px; margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px; color: var(--primary-color);">Guia Prático: Como Resolver Erros de Conexão com o Sistema Fiscal</h3>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Atualizado em 16/11/2026 • Categoria: Manuais Técnicos</p>
+                
+                <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
+
+                <h4 style="margin-bottom: 8px; color: #333;">1. Verifique o seu Certificado Digital</h4>
+                <p style="margin-bottom: 15px; color: #444; line-height: 1.5;">
+                    Muitas falhas na emissão de notas ocorrem por vencimento ou desconfiguração do token/cartão A3 ou ficheiro A1. Certifique-se de que o software gerenciador do certificado está aberto e deteta o dispositivo.
+                </p>
+
+                <h4 style="margin-bottom: 8px; color: #333;">2. Teste a Conexão com a SEFAZ</h4>
+                <p style="margin-bottom: 15px; color: #444; line-height: 1.5;">
+                    Caso receba um erro de timeout (tempo excedido), verifique se a sua rede comercial possui bloqueios de firewall nas portas exigidas pelo webservice estadual.
+                </p>
+
+                <h4 style="margin-bottom: 8px; color: #333;">3. Abrir um Chamado de Suporte</h4>
+                <p style="color: #444; line-height: 1.5;">
+                    Se o problema persistir após estes passos, aceda à aba <a href="/novo-chamado" style="color: var(--primary-color); font-weight: bold;">Novo Chamado</a>, selecione a categoria <strong>Sistema / Software</strong> e anexe o print do erro apresentado pelo sistema.
+                </p>
+            </div>
+
+            <!-- Lista de Outros Manuais -->
+            <div class="table-container" style="padding: 25px;">
+                <h3 style="margin-bottom: 15px; color: var(--primary-color);">Outros Manuais e Tutoriais</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 8px 0; border-bottom: 1px solid #eee;">• <strong>Como emitir certificado digital A1 e A3:</strong> Guia passo a passo para associados.</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid #eee;">• <strong>Resolução de Erros Fiscais Comuns:</strong> Códigos de rejeição da SEFAZ e como proceder.</li>
+                    <li style="padding: 8px 0;">• <strong>Atualização Cadastral na Junta Comercial:</strong> Documentação necessária.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

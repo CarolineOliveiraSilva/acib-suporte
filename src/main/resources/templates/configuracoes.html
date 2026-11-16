@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ACIB Suporte - Configurações</title>
+    <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+</head>
+<body class="dashboard-layout">
+    <div class="sidebar">
+        <div class="sidebar-header">ACIB Suporte</div>
+        <ul class="sidebar-menu">
+            <li><a href="/dashboard">Painel Geral</a></li>
+            <li><a href="/meus-chamados">Meus Chamados</a></li>
+            <li><a href="/novo-chamado">Novo Chamado</a></li>
+            <li><a href="/base-conhecimento">Base de Conhecimento</a></li>
+            <li class="active"><a href="/configuracoes">Configurações</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h2>Configurações da Conta</h2>
+            <span>Bem-vindo, Associado</span>
+        </div>
+        <div class="container">
+            <div class="table-container" style="max-width: 600px; padding: 30px;">
+                <form>
+                    <div class="form-group">
+                        <label>Nome da Empresa / Associado</label>
+                        <input type="text" value="Comércio Exemplo ACIB Ltda" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail de Notificação</label>
+                        <input type="email" value="contato@acibsuporte.com">
+                    </div>
+                    <button type="button" class="btn" onclick="alert('Configurações guardadas com sucesso!')">Guardar Alterações</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

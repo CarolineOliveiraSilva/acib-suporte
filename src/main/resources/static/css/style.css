@@ -85,7 +85,7 @@ body {
 }
 
 /* ==========================================
-   ESTILOS DO PAINEL (DASHBOARD)
+   ESTILOS DO PAINEL (DASHBOARD) E BARRA LATERAL
    ========================================== */
 .dashboard-layout {
     display: flex;
@@ -103,15 +103,6 @@ body {
     height: 100vh;
 }
 
-.main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: auto;
-    background-color: var(--bg-color);
-}
-
 .sidebar-header {
     padding: 20px;
     font-size: 1.2rem;
@@ -123,17 +114,38 @@ body {
 .sidebar-menu {
     list-style: none;
     padding: 20px 0;
+    margin: 0;
 }
 
 .sidebar-menu li {
-    padding: 12px 20px;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
+}
+
+.sidebar-menu a,
+.sidebar-menu a:link,
+.sidebar-menu a:visited {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    display: block !important;
+    padding: 12px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
     transition: background-color 0.2s ease;
 }
 
 .sidebar-menu li:hover, 
+.sidebar-menu li.active,
+.sidebar-menu a:hover {
+    background-color: #1d6fa5 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
 .sidebar-menu li.active {
-    background-color: #1d6fa5;
+    background-color: var(--primary-hover) !important;
+    font-weight: bold;
 }
 
 /* Conteúdo Principal */
@@ -141,7 +153,9 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     overflow-y: auto;
+    background-color: var(--bg-color);
 }
 
 .header {

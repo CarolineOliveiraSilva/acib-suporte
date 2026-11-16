@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>ACIB Suporte - Painel</title>
     <!-- Referência ao CSS separado -->
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+    
 </head>
+
 <body class="dashboard-layout">
 
     <!-- Menu Lateral -->
     <div class="sidebar">
         <div class="sidebar-header">ACIB Suporte</div>
         <ul class="sidebar-menu">
-            <li class="active">Painel Geral</li>
-            <li>Meus Chamados</li>
-            <li>Novo Chamado</li>
-            <li>Base de Conhecimento</li>
-            <li>Configurações</li>
+            <li class="active"><a href="/dashboard">Painel Geral</a></li>
+            <li><a href="/meus-chamados">Meus Chamados</a></li>
+            <li><a href="/novo-chamado">Novo Chamado</a></li>
+            <li><a href="/base-conhecimento">Base de Conhecimento</a></li>
+            <li><a href="/configuracoes">Configurações</a></li>
         </ul>
     </div>
 
@@ -48,7 +51,6 @@
             <div class="table-container">
                 <div class="table-header">
                     <h3>Últimos Chamados</h3>
-                    <button class="btn">+ Abrir Novo Chamado</button>
                 </div>
                 <table>
                     <thead>
@@ -61,33 +63,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>#018</td>
-                            <td>Erro de acesso ao sistema fiscal</td>
-                            <td>Sistema / Software</td>
-                            <td>12/11/2026</td>
-                            <td><span class="badge ativo">Ativo</span></td>
-                        </tr>
-                        <tr>
-                            <td>#017</td>
-                            <td>Dúvida sobre emissão de certificado</td>
-                            <td>Certificação Digital</td>
-                            <td>10/11/2026</td>
-                            <td><span class="badge andamento">Em Andamento</span></td>
-                        </tr>
-                        <tr>
-                            <td>#015</td>
-                            <td>Atualização de cadastro da empresa</td>
-                            <td>Cadastral</td>
-                            <td>05/11/2026</td>
-                            <td><span class="badge encerrado">Encerrado</span></td>
-                        </tr>
-                        <tr>
-                            <td>#012</td>
-                            <td>Suporte à rede de internet comercial</td>
-                            <td>Infraestrutura</td>
-                            <td>01/11/2026</td>
-                            <td><span class="badge encerrado">Encerrado</span></td>
+                        <tr th:each="chamado : ${chamados}">
+                            <td th:text="${chamado.id}">#018</td>
+                            <td th:text="${chamado.assunto}">Erro de acesso ao sistema fiscal</td>
+                            <td th:text="${chamado.categoria}">Sistema / Software</td>
+                            <td th:text="${chamado.data}">12/11/2026</td>
+                            <td>
+                                <span th:text="${chamado.status}"
+                                      th:style="${chamado.status == 'Ativo'} ? 'background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;' : (${chamado.status == 'Em Andamento'} ? 'background: #ffedd5; color: #c2410c; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;' : 'background: #dcfce7; color: #15803d; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;')">
+                                    Ativo
+                                </span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -96,4 +82,5 @@
     </div>
 
 </body>
+
 </html>

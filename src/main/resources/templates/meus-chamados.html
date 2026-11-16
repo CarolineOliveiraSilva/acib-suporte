@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ACIB Suporte - Meus Chamados</title>
+   <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+</head>
+
+<body class="dashboard-layout">
+    <div class="sidebar">
+        <div class="sidebar-header">ACIB Suporte</div>
+        <ul class="sidebar-menu">
+            <li><a href="/dashboard">Painel Geral</a></li>
+            <li class="active"><a href="/meus-chamados">Meus Chamados</a></li>
+            <li><a href="/novo-chamado">Novo Chamado</a></li>
+            <li><a href="/base-conhecimento">Base de Conhecimento</a></li>
+            <li><a href="/configuracoes">Configurações</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h2>Meus Chamados</h2>
+            <span>Bem-vindo, Associado</span>
+        </div>
+        <div class="container">
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Histórico Completo</h3>
+                    <a href="/novo-chamado" class="btn">Novo Chamado</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Assunto</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Status (Alterar)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="chamado : ${chamados}">
+                            <td th:text="${chamado.id}">#018</td>
+                            <td th:text="${chamado.assunto}">Assunto</td>
+                            <td th:text="${chamado.categoria}">Categoria</td>
+                            <td th:text="${chamado.data}">Data</td>
+                            <td>
+                                <!-- Formulário integrado para atualizar o status em tempo real -->
+                                <form action="/atualizar-status" method="post" style="margin: 0;">
+                                    <input type="hidden" name="id" th:value="${chamado.id}" />
+                                    <select name="status" onchange="this.form.submit()" style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ced4da; font-size: 13px; font-weight: bold; background-color: #fff; cursor: pointer;">
+                                        <option value="Em Andamento" th:selected="${chamado.status == 'Em Andamento'}">Em Andamento</option>
+                                        <option value="Ativo" th:selected="${chamado.status == 'Ativo'}">Ativo</option>
+                                        <option value="Encerrado" th:selected="${chamado.status == 'Encerrado'}">Encerrado</option>
+                                    </select>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

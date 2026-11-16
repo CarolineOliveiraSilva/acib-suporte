@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACIB Suporte - Novo Chamado</title>
+   <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+</head>
+
+<body class="dashboard-layout">
+
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="sidebar-header">ACIB Suporte</div>
+        <ul class="sidebar-menu">
+            <li><a href="/dashboard">Painel Geral</a></li>
+            <li><a href="/meus-chamados">Meus Chamados</a></li>
+            <li class="active"><a href="/novo-chamado">Novo Chamado</a></li>
+            <li><a href="/base-conhecimento">Base de Conhecimento</a></li>
+            <li><a href="/configuracoes">Configurações</a></li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo Principal com o Formulário -->
+    <div class="main-content">
+        <div class="header">
+            <h2>Abrir Novo Chamado</h2>
+            <span>Bem-vindo, Associado</span>
+        </div>
+
+        <div class="container">
+            <div class="table-container" style="max-width: 800px; padding: 30px;">
+                <form action="/salvar-chamado" method="post">
+                    
+                    <div class="form-group">
+                        <label for="assunto">Assunto do Chamado</label>
+                        <input type="text" id="assunto" name="assunto" required placeholder="Ex: Erro ao emitir certificado digital">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select id="categoria" name="categoria" required style="width: 100%; padding: 0.75rem; border: 2px solid #ced4da; border-radius: 4px; font-size: 1rem; color: var(--text-color); background-color: #fff;">
+                            <option value="">Selecione uma categoria</option>
+                            <option value="Sistema / Software">Sistema / Software</option>
+                            <option value="Certificação Digital">Certificação Digital</option>
+                            <option value="Cadastral">Cadastral</option>
+                            <option value="Infraestrutura">Infraestrutura</option>
+                            <option value="Financeiro / Faturamento">Financeiro / Faturamento</option>
+                            <option value="Hardware / Periféricos">Hardware / Periféricos</option>
+                            <option value="Segurança / Acessos">Segurança / Acessos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição Detalhada</label>
+                        <textarea id="descricao" name="descricao" rows="5" required placeholder="Descreva detalhadamente o problema ou dúvida..." style="width: 100%; padding: 0.75rem; border: 2px solid #ced4da; border-radius: 4px; font-size: 1rem; color: var(--text-color); background-color: #fff; font-family: inherit; resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar Chamado</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
