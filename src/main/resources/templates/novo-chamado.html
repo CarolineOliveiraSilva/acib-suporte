@@ -4,27 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>ACIB Suporte - Novo Chamado</title>
-    <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+    <link rel="stylesheet" th:href="@{/css/style.css(v=3)}">
 </head>
 
 <body class="dashboard-layout">
 
     <!-- Menu Lateral -->
     <div class="sidebar">
+    <!-- Topo: Logótipo e Links do Menu agrupa-dos em cima -->
+    <div class="sidebar-top">
         <div class="sidebar-header">ACIB Suporte</div>
         <ul class="sidebar-menu">
             <li><a href="/dashboard">Painel Geral</a></li>
             <li><a href="/meus-chamados">Meus Chamados</a></li>
-            <li class="active"><a href="/novo-chamado">Novo Chamado</a></li>
+            <li><a href="/novo-chamado">Novo Chamado</a></li>
             <li><a href="/base-conhecimento">Base de Conhecimento</a></li>
             <li><a href="/configuracoes">Configurações</a></li>
-
-            <li style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 10px;">
-                <a href="/login" style="color: #ffcccc !important;">Encerrar / Sair</a>
-            </li>
-
         </ul>
     </div>
+
+    <!-- Fundo: Botão de Sair colado na base -->
+    <div class="sidebar-footer">
+        <a href="/login">Encerrar / Sair</a>
+    </div>
+</div>
 
     <!-- Conteúdo Principal com o Formulário -->
     <div class="main-content">

@@ -96,11 +96,17 @@ body {
 
 .sidebar {
     width: 250px;
-    background-color: var(--primary-color);
+    background-color: #003366;
     color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    justify-content: space-between; /* Empurra o topo para cima e o footer para baixo */
+    padding-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .sidebar-header {
@@ -111,9 +117,14 @@ body {
     text-align: center;
 }
 
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
 .sidebar-menu {
     list-style: none;
-    padding: 20px 0;
+    padding: 0;
     margin: 0;
 }
 
@@ -148,6 +159,28 @@ body {
     font-weight: bold;
 }
 
+.sidebar-footer {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.15); /* Cria um subtil destaque de rodapé */
+}
+
+.sidebar-footer a {
+    color: #ff8080 !important; /* Cor clara e de alto contraste para leitura rápida */
+    text-decoration: none !important;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-footer a:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ffffff !important;
+}
 /* Conteúdo Principal */
 .main-content {
     flex: 1;
@@ -156,6 +189,7 @@ body {
     height: 100vh;
     overflow-y: auto;
     background-color: var(--bg-color);
+    margin-left: 250px; /* Garante que o conteúdo não fica por baixo da sidebar fixa */
 }
 
 .header {
